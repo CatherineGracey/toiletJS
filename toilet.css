@@ -1,0 +1,120 @@
+body {
+  background: lightblue;
+}
+#toilet, .cistern {
+  display: inline-block;
+  box-sizing: border-box;
+}
+#toilet {
+  transition: background-color 2s;
+  width: 400px;
+  height: 400px;
+  background-color: mintcream;
+  border: 75px solid white;
+  border-radius: 50%;
+}
+.cistern {
+  height: 400px;
+  width: 100px;
+  background-color: white;
+  margin-left: -20px;
+}
+#flush-btn {
+  float: right;
+  margin: 20px 20px 0 0;
+}
+@keyframes flushPee {
+  0%   {background: repeating-linear-gradient(
+        0deg,
+        lemonchiffon,
+        lemonchiffon 10px,
+        mintcream 11px,
+        mintcream 12px
+     );
+   transform: rotate(360deg);
+   transition: transform .5s;
+ }
+  20%   {background: repeating-linear-gradient(
+       20deg,
+       lemonchiffon,
+       lemonchiffon 8px,
+       mintcream 9px,
+       mintcream 11px
+    );}
+  40%   {background: repeating-linear-gradient(
+        40deg,
+        lemonchiffon,
+        lemonchiffon 6px,
+        mintcream 7px,
+        mintcream 10px
+     );}
+  60%   {background: repeating-linear-gradient(
+       60deg,
+       lemonchiffon,
+       lemonchiffon 4px,
+       mintcream 5px,
+       mintcream 9px
+    );}
+  80%   {background: repeating-linear-gradient(
+        80deg,
+        lemonchiffon,
+        lemonchiffon 2px,
+        mintcream 3px,
+        mintcream 8px
+     );}
+  100% {background: mintcream;}
+}
+@keyframes flushPoop {
+  0%   {background: repeating-linear-gradient(
+        0deg,
+        darkolivegreen,
+        darkolivegreen 10px,
+        mintcream 11px,
+        mintcream 12px
+     );
+   transform: rotate(360deg);
+   transition: transform .5s;
+ }
+  20%   {background: repeating-linear-gradient(
+       20deg,
+       darkolivegreen,
+       darkolivegreen 8px,
+       mintcream 9px,
+       mintcream 11px
+    );}
+  40%   {background: repeating-linear-gradient(
+        40deg,
+        darkolivegreen,
+        darkolivegreen 6px,
+        mintcream 7px,
+        mintcream 10px
+     );}
+  60%   {background: repeating-linear-gradient(
+       60deg,
+       darkolivegreen,
+       darkolivegreen 4px,
+       mintcream 5px,
+       mintcream 9px
+    );}
+  80%   {background: repeating-linear-gradient(
+        80deg,
+        darkolivegreen,
+        darkolivegreen 2px,
+        mintcream 3px,
+        mintcream 8px
+     );}
+  100% {background: mintcream;}
+}
+
+.flushPee {
+  animation-name: flushPee;
+  animation-duration: 4s;
+  transform: rotate(360);
+  transition: transform 4s;
+}
+.flushPoop {
+  animation-name: flushPoop;
+  animation-duration: 4s;
+  transform: rotate(360);
+  transition: transform 4s;
+}
