@@ -1,43 +1,38 @@
 console.log("toilet ready to flush");
 
-function bang(){
-  console.log("bang");
+function pee(){
+  document.getElementById("bowl").style.backgroundColor = "lemonchiffon";
 }
 
-var bigBang = function(){
-  console.log("BANG");
-};
-
-//bang();
-//setTimeout(bigBang, 1000);
-
-var pee = function(){
-  document.getElementById("toilet").style.backgroundColor = "lemonchiffon";
+function poop(){
+  var poo = document.createElement('div');
+  poo.className = "poo";
+  poo.style.transform = "rotate(" + Math.round(Math.random() * 50 - 25) + "deg)";
+  poo.style.width = Math.ceil(Math.random() * 150) + 50 + "px";
+  poo.style.height = Math.ceil(Math.random() * 30) + 20 + "px";
+  document.getElementById("bowl").appendChild(poo);
 }
 
-var poop = function(){
-  document.getElementById("toilet").style.backgroundColor = "darkolivegreen";
-}
-
-var flush = function(){
-  var toilet = document.getElementById("toilet");
-  if (toilet.style.backgroundColor === "darkolivegreen"){
+function flush(){
+  var bowl = document.getElementById("bowl");
+  if (bowl.style.backgroundColor !== "mintcream") {
     setTimeout(function(){
-      toilet.style.backgroundColor = "mintcream";
-      toilet.className = "flushPoop";
-    }, 1000);
-  } else if (toilet.style.backgroundColor === "lemonchiffon") {
-    setTimeout(function(){
-      toilet.style.backgroundColor = "mintcream";
-      toilet.className = "flushPee";
-    }, 1000);
-  } else {
-    setTimeout(function(){
-      toilet.style.backgroundColor = "mintcream";
+      bowl.style.backgroundColor = "mintcream";
+      bowl.className = "flushPee";
     }, 1000);
   }
+  var poos = document.getElementsByClassName("poo");
+  if (poos.length > 0) {
+    var timing = 4000 / poos.length;
+    for (var p = 0; p < poos.length; p++){
+      setTimeout(function(){
+        var poo = document.getElementsByClassName("poo")[0];
+        poo.parentElement.removeChild(poo);
+      }, timing * p);
+    }
+  }
   setTimeout(function(){
-    toilet.className = "";
+    bowl.className = "";
   }, 5000);
 }
 

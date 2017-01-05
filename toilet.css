@@ -1,17 +1,30 @@
 body {
   background: lightblue;
 }
-#toilet, .cistern {
+
+.toilet {
+  margin: 0 auto;
+  width: 480px;
+}
+#flush-btn {
+  border-radius: 50%;
+  background-color: chocolate;
+  color: white;
+  height: 50px;
+  width: 50px;
+}
+#bowl, .cistern {
   display: inline-block;
   box-sizing: border-box;
 }
-#toilet {
+#bowl {
   transition: background-color 2s;
   width: 400px;
   height: 400px;
   background-color: mintcream;
   border: 75px solid white;
   border-radius: 50%;
+  position: relative;
 }
 .cistern {
   height: 400px;
@@ -23,6 +36,17 @@ body {
   float: right;
   margin: 20px 20px 0 0;
 }
+
+.poo {
+  background-color: brown;
+  border: 2px solid #850a0a;
+  border-radius: 30px 65px 65px 30px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}
+
 @keyframes flushPee {
   0%   {background: repeating-linear-gradient(
         0deg,
@@ -67,8 +91,8 @@ body {
 @keyframes flushPoop {
   0%   {background: repeating-linear-gradient(
         0deg,
-        darkolivegreen,
-        darkolivegreen 10px,
+        brown,
+        brown 10px,
         mintcream 11px,
         mintcream 12px
      );
@@ -77,29 +101,29 @@ body {
  }
   20%   {background: repeating-linear-gradient(
        20deg,
-       darkolivegreen,
-       darkolivegreen 8px,
+       brown,
+       brown 8px,
        mintcream 9px,
        mintcream 11px
     );}
   40%   {background: repeating-linear-gradient(
         40deg,
-        darkolivegreen,
-        darkolivegreen 6px,
+        brown,
+        brown 6px,
         mintcream 7px,
         mintcream 10px
      );}
   60%   {background: repeating-linear-gradient(
        60deg,
-       darkolivegreen,
-       darkolivegreen 4px,
+       brown,
+       brown 4px,
        mintcream 5px,
        mintcream 9px
     );}
   80%   {background: repeating-linear-gradient(
         80deg,
-        darkolivegreen,
-        darkolivegreen 2px,
+        brown,
+        brown 2px,
         mintcream 3px,
         mintcream 8px
      );}
